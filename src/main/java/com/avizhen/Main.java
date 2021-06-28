@@ -1,8 +1,6 @@
 package com.avizhen;
 
-import com.avizhen.dto.CityDto;
-import com.avizhen.entity.City;
-import com.avizhen.service.CityService;
+import com.avizhen.service.TgBotService;
 import com.avizhen.telegramBot.TelegramBot;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -12,7 +10,6 @@ import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
-import java.util.List;
 
 @SpringBootApplication
 public class Main {
@@ -23,12 +20,12 @@ public class Main {
     }
 
     @Bean
-    public CommandLineRunner registerTgBot(CityService cityService) {
+    public CommandLineRunner registerTgBot(TgBotService tgBotService) {
         return new CommandLineRunner() {
             @Override
             public void run(String... strings) throws Exception {
 
-                TelegramBot telegramBot = new TelegramBot(cityService);
+                TelegramBot telegramBot = new TelegramBot(tgBotService);
                 TelegramBotsApi telegramBotsApi;
 
                 try {

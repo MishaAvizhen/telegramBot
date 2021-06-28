@@ -10,9 +10,15 @@ public class CityConverter implements Converter<City, CityDto> {
     @Override
     public City convertToEntity(CityDto dto) {
         City city = new City();
-        city.setName(dto.getName());
-        city.setInfo(dto.getInfo());
 
-        return city;
+        return convertToExistingEntity(dto, city);
     }
+
+    @Override
+    public City convertToExistingEntity(CityDto dto, City entity) {
+        entity.setName(dto.getName());
+        entity.setInfo(dto.getInfo());
+        return entity;
+    }
+
 }

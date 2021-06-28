@@ -11,9 +11,9 @@ public interface CityService {
     City findByName(String name);
     City findById(Integer id);
 
-
     City createCity(CityDto cityDto);
-    City updateCity(CityDto cityDto);
+
+    City updateCity(CityDto cityDto, Integer id);
 
     void delete(Integer id);
 
