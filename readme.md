@@ -1,0 +1,2 @@
+TOKEN = "1706098844:AAEWPpsVoPLTkUmR2MrXCIjvR97BHGCDc-8";
+USERNAME = "misha_avizhen_tg_bot";
